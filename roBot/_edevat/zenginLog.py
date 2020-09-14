@@ -11,7 +11,7 @@ bilgiler = json.load(open("bilgiler.json"))
 async def logYolla(client, message):
     # < LOG Alanı
     log_dosya = f"[{saat} / {tarih}] "
-    # sohbet = await client.get_chat(message.chat.id)
+    sohbet = await client.get_chat(message.chat.id)
     
     if message.from_user.username:
         log_mesaj   = f"@{message.from_user.username}"
@@ -35,7 +35,7 @@ async def logYolla(client, message):
     log_konsol  += f"\t[green]||[/] [magenta]{message.chat.type}[/]"
     log_dosya   += f"\t|| {message.chat.type}\n"
 
-    # await client.send_message(bilgiler['log_id'], log_mesaj)                  # log_id'ye log gönder
+    await client.send_message(bilgiler['log_id'], log_mesaj)                  # log_id'ye log gönder
     logVer(f"{log_konsol}")                                                   # zenginKonsol'a log gönder
 
     with open(f"{bilgiler['session']}.log", "a+") as log_yaz:                 # dosyaya log yaz
