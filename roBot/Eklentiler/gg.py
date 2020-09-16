@@ -44,7 +44,7 @@ async def googleNasilKullanilir(client, message):                           # fo
         sure = bitir - basla                                                # Duran - Başlayan Zaman
         mesaj += f"\n\nTepki Süresi : `{str(sure)[:4]} sn`"                 # Mesaja Ekle
         try:                                                                # Dene
-            await ilk_mesaj.edit(mesaj)
+            await ilk_mesaj.edit(mesaj, disable_web_page_preview = True)
         except Exception as hata:
             await ilk_mesaj.edit(f"**Uuppss:**\n\n`{hata}`")
     else:                                                                   # Eğer tepki yoksa

@@ -50,7 +50,7 @@ async def google(client, message):
         mesaj += f"\nTepki Süresi : `{str(sure)[:4]} sn`"
         
         try:
-            await ilk_mesaj.edit(mesaj, disable_web_page_preview    = True,)
+            await ilk_mesaj.edit(mesaj, disable_web_page_preview = True)
         except Exception as hata:
             await ilk_mesaj.edit(f"**Uuppss:**\n\n`{hata}`")
     else:                                                                           # Eğer tepki yoksa
